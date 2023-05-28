@@ -19,5 +19,5 @@ public interface ProductAdapter {
         @ApiResponse(responseCode = "200", description = "All products")
     })
     @GetMapping("")
-    ResponseEntity<List<ProductDto>> findAllOrderByTotalUnitsAsc();
+    ResponseEntity<List<ProductDto>> findAllOrdered();
 }
