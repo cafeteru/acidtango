@@ -18,7 +18,7 @@ public class ProductController implements ProductAdapter {
     private final ProductService productService;
 
     @Override
-    public ResponseEntity<List<ProductDto>> findAll() {
-        return ResponseEntity.ok(productService.findAll());
+    public ResponseEntity<List<ProductDto>> findAllOrderByTotalUnitsAsc() {
+        return ResponseEntity.ok(productService.findAllOrderByTotalUnitsAsc());
     }
 }

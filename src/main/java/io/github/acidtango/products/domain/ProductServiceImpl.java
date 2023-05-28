@@ -9,7 +9,6 @@ import io.github.acidtango.products.adapter.db.ProductRepository;
 import io.github.acidtango.products.domain.mapper.ProductMapper;
 import io.github.acidtango.products.domain.model.ProductDto;
 import io.github.acidtango.products.port.ProductService;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,8 +20,8 @@ public class ProductServiceImpl implements ProductService {
     private final ProductMapper mapper = Mappers.getMapper(ProductMapper.class);
 
     @Override
-    public List<ProductDto> findAll() {
-        final var result = productRepository.findAll();
+    public List<ProductDto> findAllOrderByTotalUnitsAsc() {
+        final var result = productRepository.findAllOrderByTotalUnitsAsc();
         return mapper.toDtos(result);
     }
 }
