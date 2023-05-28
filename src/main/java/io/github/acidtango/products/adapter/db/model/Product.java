@@ -14,12 +14,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Document(collection = "Product")
 public class Product {
-
     @Id
-    public String id;
-
-    public String name;
-
-    public int salesUnit;
-
+    private String id;
+    private String name;
+    private int salesUnit;
+    private Stock stock;
 }
