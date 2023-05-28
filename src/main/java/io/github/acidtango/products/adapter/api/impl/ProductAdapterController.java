@@ -1,10 +1,11 @@
-package io.github.acidtango.products.adapter.api;
+package io.github.acidtango.products.adapter.api.impl;
 
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.acidtango.products.adapter.api.ProductAdapter;
 import io.github.acidtango.products.adapter.db.model.Product;
 import io.github.acidtango.products.port.ProductService;
 import lombok.RequiredArgsConstructor;
