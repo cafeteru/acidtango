@@ -11,7 +11,7 @@ public class ProductDto {
     @Schema(description = "Name of the product", example = "V-NECH BASIC SHIRT")
     private String name;
 
-    @Schema(description = "Sales unit available", example = "100")
+    @Schema(description = "Number of units sold", example = "100")
     private int salesUnit;
 
     @Schema(description = "Stock available")
