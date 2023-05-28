@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import io.github.acidtango.products.adapter.db.model.Product;
+import io.github.acidtango.products.domain.model.ProductDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -19,5 +19,5 @@ public interface ProductAdapter {
         @ApiResponse(responseCode = "200", description = "All products")
     })
     @GetMapping("")
-    ResponseEntity<List<Product>> findAll();
+    ResponseEntity<List<ProductDto>> findAll();
 }

@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.acidtango.products.adapter.api.ProductAdapter;
-import io.github.acidtango.products.adapter.db.model.Product;
+import io.github.acidtango.products.domain.model.ProductDto;
 import io.github.acidtango.products.port.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,11 +14,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-public class ProductAdapterController implements ProductAdapter {
+public class ProductController implements ProductAdapter {
     private final ProductService productService;
 
     @Override
-    public ResponseEntity<List<Product>> findAll() {
+    public ResponseEntity<List<ProductDto>> findAll() {
         return ResponseEntity.ok(productService.findAll());
     }
 }

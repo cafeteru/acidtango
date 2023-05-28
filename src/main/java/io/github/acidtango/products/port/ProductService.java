@@ -2,8 +2,8 @@ package io.github.acidtango.products.port;
 
 import java.util.List;
 
-import io.github.acidtango.products.adapter.db.model.Product;
+import io.github.acidtango.products.domain.model.ProductDto;
 
 public interface ProductService {
-    List<Product> findAll();
+    List<ProductDto> findAll();
 }
