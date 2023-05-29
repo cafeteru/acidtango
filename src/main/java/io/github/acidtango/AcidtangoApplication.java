@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AcidtangoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AcidtangoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AcidtangoApplication.class, args);
+    }
 
 }
