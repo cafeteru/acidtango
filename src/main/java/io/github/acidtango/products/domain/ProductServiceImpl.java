@@ -21,8 +21,8 @@ public class ProductServiceImpl implements ProductService {
     private final ProductMapper mapper = Mappers.getMapper(ProductMapper.class);
 
     @Override
-    public List<ProductDto> findAll(Pageable pageable) {
-        var page = repository.findAllCustom(pageable);
-        return mapper.toDtos(page);
+    public List<ProductDto> findAll(final Pageable pageable) {
+        final var list = repository.findAllCustom(pageable);
+        return mapper.toDtos(list);
     }
 }

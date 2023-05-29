@@ -14,6 +14,9 @@ public class ProductDto {
     @Schema(description = "Number of units sold", example = "100")
     private int salesUnit;
 
+    @Schema(description = "Total units", example = "10")
+    private int totalUnits;
+
     @Schema(description = "Stock available")
     private StockDto stock;
 

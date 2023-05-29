@@ -14,6 +14,4 @@ public class StockDto {
     private int m;
     @Schema(description = "Size L units", example = "0")
     private int l;
-    @Schema(description = "Total units", example = "10")
-    private int totalUnits;
 }

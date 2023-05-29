@@ -2,7 +2,6 @@ package io.github.acidtango.products.adapter.api.impl;
 
 import java.util.List;
 
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,8 +20,7 @@ public class ProductController implements ProductAdapter {
 
     @Override
     public ResponseEntity<List<ProductDto>> findAll(final Pageable pageable) {
-        var a = pageable.getSort();
-        final var page = productService.findAll(pageable);
-        return ResponseEntity.ok(page);
+        final var list = productService.findAll(pageable);
+        return list.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(list);
     }
 }

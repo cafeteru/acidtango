@@ -7,5 +7,5 @@ import org.springframework.data.domain.Pageable;
 import io.github.acidtango.products.domain.model.ProductDto;
 
 public interface ProductService {
-    List<ProductDto> findAll(Pageable pageable);
+    List<ProductDto> findAll(final Pageable pageable);
 }
