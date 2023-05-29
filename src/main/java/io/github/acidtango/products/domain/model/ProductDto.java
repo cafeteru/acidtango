@@ -16,4 +16,5 @@ public class ProductDto {
 
     @Schema(description = "Stock available")
     private StockDto stock;
+
 }

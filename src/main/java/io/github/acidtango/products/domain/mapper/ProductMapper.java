@@ -12,6 +12,8 @@ public interface ProductMapper extends DtoEntityMapper<ProductDto, Product> {
     @Mapping(source = "stock.quantityS", target = "stock.s")
     @Mapping(source = "stock.quantityM", target = "stock.m")
     @Mapping(source = "stock.quantityL", target = "stock.l")
+    @Mapping(target = "stock.totalUnits", expression =
+        "java(stock.getQuantityS() + stock.getQuantityM() + stock.getQuantityL())")
     @Override
     ProductDto toDto(final Product entity);
 }

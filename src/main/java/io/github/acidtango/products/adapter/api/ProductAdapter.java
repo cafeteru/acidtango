@@ -2,6 +2,8 @@ package io.github.acidtango.products.adapter.api;
 
 import java.util.List;
 
+import org.springdoc.api.annotations.ParameterObject;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,5 +21,5 @@ public interface ProductAdapter {
         @ApiResponse(responseCode = "200", description = "All products")
     })
     @GetMapping("")
-    ResponseEntity<List<ProductDto>> findAllOrdered();
+    ResponseEntity<List<ProductDto>> findAll(@ParameterObject final Pageable pageable);
 }
