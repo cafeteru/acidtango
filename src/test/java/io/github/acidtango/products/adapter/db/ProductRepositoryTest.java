@@ -30,6 +30,7 @@ class ProductRepositoryTest {
 
     @BeforeEach
     public void init() {
+        productRepository.deleteAll();
         products = List.of(
             createProduct("V-NECH BASIC SHIRT", 100, createStock(4, 9, 0)),
             createProduct("CONTRASTING FABRIC T-SHIRT", 50, createStock(35, 9, 9)),
@@ -39,11 +40,6 @@ class ProductRepositoryTest {
             createProduct("SLOGAN T-SHIRT", 20, createStock(9, 2, 5))
         );
         productRepository.saveAll(products);
-    }
-
-    @AfterEach
-    public void clean() {
-        productRepository.deleteAll();
     }
 
     @Test
