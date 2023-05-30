@@ -23,6 +23,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDto> findAll(final Pageable pageable) {
         final var list = repository.findAllCustom(pageable);
-        return mapper.toDtos(list);
+        final List<ProductDto> dtos = mapper.toDtos(list);
+        dtos.forEach(ProductDto::calculateTotalUnits);
+        return dtos;
     }
 }

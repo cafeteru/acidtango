@@ -44,7 +44,7 @@ class ProductServiceImplTest {
     }
 
     @Test
-    void testFindAll() {
+    void findAllCustom_with_successfully_response() {
         when(repository.findAllCustom(any())).thenReturn(products);
         var result = service.findAll(pageable);
         assertNotEquals(products.getClass(), result.getClass());
@@ -60,7 +60,7 @@ class ProductServiceImplTest {
     }
 
     @Test
-    void testFindAllReturnEmptyList() {
+    void findAllCustom_with_empty_response() {
         when(repository.findAllCustom(any())).thenReturn(Collections.emptyList());
         var result = service.findAll(pageable);
         assertNotEquals(products.getClass(), result.getClass());

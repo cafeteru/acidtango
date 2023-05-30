@@ -20,4 +20,7 @@ public class ProductDto {
     @Schema(description = "Stock available")
     private StockDto stock;
 
+    public void calculateTotalUnits() {
+        totalUnits = stock.getS() + stock.getM() + stock.getL();
+    }
 }
