@@ -43,11 +43,11 @@ class ProductControllerTest {
     }
 
     @Test
-    void findAll() {
+    void findAll_with_successfully_response() {
         when(productService.findAll(any())).thenReturn(products);
         var result = productController.findAll(pageable);
         assertNotNull(result);
-        assertNotNull(HttpStatus.ACCEPTED, String.valueOf(result.getStatusCode()));
+        assertEquals(HttpStatus.OK, result.getStatusCode());
         assertNotNull(result.getBody());
         assertEquals(products.getClass(), result.getBody().getClass());
         assertFalse(result.getBody().isEmpty());
@@ -56,11 +56,11 @@ class ProductControllerTest {
     }
 
     @Test
-    void findAllWithEmptyList() {
+    void findAll_with_empty_response() {
         when(productService.findAll(any())).thenReturn(Collections.emptyList());
         var result = productController.findAll(pageable);
         assertNotNull(result);
-        assertNotNull(HttpStatus.NO_CONTENT, String.valueOf(result.getStatusCode()));
+        assertEquals(HttpStatus.NO_CONTENT, result.getStatusCode());
         assertNull(result.getBody());
     }
 
